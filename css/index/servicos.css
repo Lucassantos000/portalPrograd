@@ -1,0 +1,99 @@
+.sectionServicos{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 0px 30px 10px 20px;
+}
+
+
+.intenServico{
+    width:calc(50% - 25px);
+    height: 60px;
+    /* padding-left: 15px; */
+    background-color: whitesmoke;
+    margin: 15px 10px 0px 0;
+    text-align: center;
+    overflow: hidden;
+
+}
+
+.intenServico p {
+    position: relative;
+    top: 20px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.intenServico::after{
+    content: '';
+    width:3px;
+    height: 60px;
+    background-color: var(--azul--escuro);
+    position: relative;
+    display: block;
+    /* margin-top: 15px; */
+    top: -19px;
+}
+
+
+.hoverSombra{
+    width: 0;
+    display: none;
+    height:100%;
+    background-color: var(--azul--escuro);
+    color: white;
+    overflow: hidden;
+    flex-wrap: wrap;
+
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.hoverSombra p{
+    overflow: hidden;
+}
+
+
+.intenServico:hover::after{
+    display: none;
+}
+
+.intenServico:hover .hoverSombra{
+    animation: hoverSombra 0.5s ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+     
+}
+
+.intenServico:hover .hoverSombra + p{
+    animation: opacit 0.5s ;
+    display: none;
+    
+     
+}
+
+
+
+
+@keyframes opacit {
+    from{
+        opacity: 1;
+        /* display: flex; */
+    }to{
+        opacity: 0; 
+    }
+}
+
+
+@keyframes hoverSombra {
+    from{
+        width:0px;
+        /* display: flex; */
+    }to{
+        width:100%;
+        
+    }
+}
