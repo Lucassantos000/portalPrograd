@@ -1,0 +1,170 @@
+:root {
+    --azul--fundo: rgba(18,149, 194);
+    --azul--escuro: rgba(3,120,163,1);
+  }
+
+.topBar{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--azul--fundo);
+    /* background-color: rgba(3, 120, 163, 1); */
+    margin-top: 15px;
+   box-shadow: 0px 7px 15px -6px grey;
+}
+
+.contentaBarMax{
+    display: none;
+    width:99%;
+}
+
+.barSearchMax{
+    width: calc(100% - 40px);
+    height: 38px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    border: none;
+    background-color: gainsboro;
+    padding-left: 4px;
+    font-size: 15px;
+}
+
+
+.contentaBar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.barSearch{
+    width: 220px;
+    height: 38px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    border: none;
+    background-color: gainsboro;
+    padding-left: 4px;
+    font-size: 15px;
+}
+
+.contentLupa{
+    padding: 9.8px;
+    background-color: var(--azul--escuro);
+    border-radius: 0px 5px 5px 0;
+    cursor: pointer;
+    color: white;
+}
+
+.contentLupa:hover{
+    background-color: gainsboro;
+    color:var(--azul--escuro)
+}
+
+.elementList{
+    min-width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    margin: auto 5px;
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+}
+
+.elementList:hover{
+    background-color: var(--azul--escuro);
+}
+
+
+/* CONTAINER SUBELEMENTOS */
+
+
+.containerSubElementsInstitucionais{
+    height: 0px;
+    display: none;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--azul--fundo);
+    border-top: 0.3px solid white;
+    /* background-color: rgba(3, 120, 163, 1); */
+    
+}
+
+.elementSublist{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* padding-bottom: 5px; */
+    cursor: pointer;
+}
+
+.underlineSubList{
+    height: 3.2px;
+    background-color: white;
+    transition: all ease-in-out 3s;
+}
+
+.elementSublist:hover .underlineSubList {
+    animation: underline 1.2s;
+    width: 100%;
+}
+
+.elementSublist > span{
+    transition: all ease 500ms;
+}
+
+.elementSublist:hover > span{
+    font-size: 17.5px;
+}
+
+
+
+
+/* KEY FRAMES */
+@keyframes underline {
+    from{
+        width:0px;
+    }to{
+        width: 100%;
+    } 
+}
+
+
+/*
+IDEIA PARA MODAL DE SUB EEMENTOS
+
+displa$("#containerSubElementsInstitucionais").css('display','flex');
+    $("#containerSubElementsInstitucionais").animate({
+        height: "40px"
+       }, 600)
+
+*/
+
+
+@media only screen and (max-width: 1300px) {
+
+    .contentaBarMax{
+        display: flex;
+    }
+    
+
+    .contentaBar{
+        display: none;
+    }
+
+    .elementList{
+        display: none;
+    }
+
+    .topBar{
+        align-items: center;
+        justify-content:center;
+    }
+
+}
+
+
+
