@@ -97,3 +97,15 @@
         
     }
 }
+
+
+
+@media only screen and (max-width: 767px) {
+    .sectionServicos{
+        flex-direction: column;
+    }
+
+    .intenServico{
+        width:100%;
+    }
+}

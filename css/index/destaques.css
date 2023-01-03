@@ -24,6 +24,7 @@
     height : 555px;
     max-height : 100%;
     margin : 0 auto;
+    margin-top: 15px;
   }
   .slider {
     display: flex;

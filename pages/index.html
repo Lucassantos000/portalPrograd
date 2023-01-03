@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="../css/index/servicos.css">
     
     <script src="../js/index/index.js"defer></script>
+    <script src="../js/index/busca.js"defer></script>
+    <script src="../js/index/maisNoticias.js"defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/b808efa0f8.js" crossorigin="anonymous"></script>
 
@@ -38,7 +40,7 @@
             <span class="elementList"> <span>Publicações</span> </span>
             <span class="elementList"> <span>Dúvidas</span> </span>
 
-            <span class="contentaBar"> <input class="barSearch" type="text" name="buscaHome" id="buscaHome" placeholder="buscar"> <span class="contentLupa"><i class="fa-solid fa-magnifying-glass"></i></span></span>
+            <span class="contentaBar"> <input class="barSearch" type="text" name="buscaHome" id="buscaHomeMenor" placeholder="buscar"> <span class="contentLupa"><i class="fa-solid fa-magnifying-glass"></i></span></span>
         </div>
         
         <!-- container INSTITUCIONAL -->
@@ -108,6 +110,7 @@
 
     </section>
 
+    <!-- SEÇÃO DE NOTÍCIAS -->
     <section class="sectionNoticias">
 
 
@@ -126,11 +129,47 @@
                     </div>
 
                     <div class="texteBodyNoticia">
-                     <div style="font-weight: bold;">TÍTULO DA NOTÍCIA VAI FICAR AQUI</div>
+                     <div class="titleTexteBodyNoticia" style="font-weight: bold;">TÍTULO DA NOTÍCIA VAI FICAR AQUI</div>
                      <div style="text-align:justify;margin-top: 10px;"> &nbsp &nbsp  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets con[...]</div>
                     </div>
                 </div>
 
+                
+            </div>
+
+            <div class="noticia">
+                <div class="rowCabecalho"> <p class="textNoticiaRowCabecalho">NOTÍCIA</p> <p class="separatorRow"></p> <p class="dataNoticia">30 de Dezembro de 2022</p> </div>
+
+                <div class="bodyNoticia">
+                    <div class="imgBodyNoticia defaultImgNoticia">
+
+                    </div>
+
+                    <div class="texteBodyNoticia">
+                     <div class="titleTexteBodyNoticia" style="font-weight: bold;">TÍTULO DA NOTÍCIA VAI FICAR AQUI</div>
+                     <div style="text-align:justify;margin-top: 10px;"> &nbsp &nbsp  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets con[...]</div>
+                    </div>
+                </div>
+
+                
+            </div>
+
+
+            <div class="noticia">
+                <div class="rowCabecalho"> <p class="textNoticiaRowCabecalho">NOTÍCIA</p> <p class="separatorRow"></p> <p class="dataNoticia">30 de Dezembro de 2022</p> </div>
+
+                <div class="bodyNoticia">
+                    <div class="imgBodyNoticia defaultImgNoticia">
+
+                    </div>
+
+                    <div class="texteBodyNoticia">
+                     <div class="titleTexteBodyNoticia" style="font-weight: bold;">TÍTULO DA NOTÍCIA VAI FICAR AQUI</div>
+                     <div style="text-align:justify;margin-top: 10px;"> &nbsp &nbsp  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets con[...]</div>
+                    </div>
+                </div>
+
+                
             </div>
 
             
@@ -138,6 +177,8 @@
             
 
         </div>
+
+        <button id="btnMaisNoticias" pagination="0" onclick="maisNoticias(this)" class="btnMaisNoticias">Mais Notícias <img style="margin-left:5px;" width="12px"   src="../img/rowBottomWhite.png" alt="seta para baixo" title="mais notícias"></button>
 
     </section>
 
