@@ -44,7 +44,36 @@
 
             <span class="contentaBar"> <input class="barSearch" type="text" name="buscaHome" id="buscaHomeMenor" placeholder="buscar"> <span class="contentLupa"><i class="fa-solid fa-magnifying-glass"></i></span></span>
         </div>
+
+        <div class="topBarResponsive">
+            <span style="height: 40px;" id="spanIconResponsiveAbrir" onclick="abreContainerTopBarResponsivo()"><i id="barraResponsiva" aberto="false" class="fa-solid fa-bars"></i></span>
+            <span style="display: none; height: 40px;" id="spanIconResponsiveFechar" onclick="abreContainerTopBarResponsivo()"><i id="barraResponsiva" aberto="false" class="fa-solid fa-x"></i></span>
+        <div class="contentElementsBarResponsive">
+        <div class="elementBarResponsive elememntSelectedResponsive">Início</div>
         
+        <div onclick="mostraSubElementsInstitucional()" class="elementBarResponsive">Institucional <img id="rowElementInstitucinalResponsive" style="margin-left:5px; margin-top: 2px; transition: all ease 0.5s;" width="12px"   src="../img/rowBottomWhite.png" alt="seta para baixo" title="plusInstitucional"></div>
+        <div aberto="false" style="height: 0; overflow: hidden;" id="wrapingSubElementsInstitucional">
+            <div class="subElementsBarResponsive">Cursos de Graduação</div>
+            <div class="subElementsBarResponsive">Calendário Acadêmcio</div>
+            <div class="subElementsBarResponsive">Quem Somos</div>
+        </div>
+
+        <!-- SUBELEMENTOSSOLICITACAO-BARRA RERSPONSIVA -->
+        <div onclick="mostraSubElementsSolicitacao()" class="elementBarResponsive">Solicitacao <img id="rowElementSolicitacaoResponsive" style="margin-left:5px; margin-top: 2px; transition: all ease 0.5s;" width="12px"   src="../img/rowBottomWhite.png" alt="seta para baixo" title="plusInstitucional"></div>
+        <div aberto="false" style="height: 0; overflow: hidden;" id="wrapingSubElementsSolicitacao">
+            <div class="subElementsBarResponsive">Cursos de Graduação</div>
+            <div class="subElementsBarResponsive">Calendário Acadêmcio</div>
+            <div class="subElementsBarResponsive">Quem Somos</div>
+        </div>
+        
+        
+        
+        <div class="elementBarResponsive">Legislação</div>
+        <div class="elementBarResponsive">Publicações</div>
+        <div class="elementBarResponsive">Dúvidas</div>
+        </div>
+
+        </div>
         <!-- container INSTITUCIONAL -->
         <div  id="containerSubElementsInstitucionais" class="containerSubElementsInstitucionais">
             <div class="elementSublist">
