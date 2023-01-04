@@ -1,0 +1,72 @@
+
+
+.sectionCardAcesso{
+    display: flex; 
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.cardAcesso{
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 160px;
+    height: 170px;
+    border-radius: 5px;
+    /* border: 1px solid black; */
+    transition: all ease-in-out ;
+    /* box-shadow:0px 0px 10px 1px gray ; */
+}
+.cardAcesso::after{
+    content: '';
+    width:100%;
+    height: 3px;
+    display: block;
+    position: relative;
+    background-color: var(--azul--escuro);
+    border-radius: 0 0 5px 5px;
+
+}
+
+.bodyBW{
+    border-radius: 5px 5px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width:100%;
+    height:100%;
+    background-color: rgba(220, 220, 220, 0.303);
+    color: black;
+    transition: all ease 0.3s;
+    overflow: hidden;
+}
+.bodyColor{
+    border-radius: 5px 5px 0 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width:100%;
+    height:0%;
+    background-color: var(--azul--escuro);
+    color: white;
+    transition: all ease-in-out 0.3s;
+    transition-delay: 2s;
+    overflow: hidden;
+
+}
+
+.cardAcesso:hover .bodyBW{
+    height: 0;
+}
+
+.cardAcesso:hover .bodyColor{
+    display: flex;
+    height:100%;
+}
