@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa</title>
+
+    <link rel="stylesheet" href="../css/unidaes&cursos/style.css">
+    
+    <script src="../js/unidades&cursos/unidades&cursos.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+    <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700&display=swap');
+
+    *{
+        margin:0;
+        padding:0;
+        font-family: 'Roboto Flex', Calibri, sans-serif;
+    }
+
+    text{
+        display: none;
+    }
+
+    path:hover{
+        fill-opacity: 1;
+        fill:rgb(21, 146, 94);
+        cursor: pointer;
+        stroke-opacity: 1;
+        stroke-width: .7;
+        stroke: rgb(21, 146, 94);
+    }
+
+    path:hover + text{
+        display: initial;
+        fill: white;
+        stroke: white;
+    }
+
+    .titleEstado{
+        display: inline-flex;
+        align-items: center;
+        margin-bottom: 5px;
+        border-bottom: 2px solid black;
+    }
+
+    .escolaCentro{
+        font-size: 13px;
+        margin-left: 10px;
+    }
+
+    #path418:hover{
+        fill-opacity: initial;
+        fill:none;
+        stroke: 1;
+        stroke: black;
+    }
+
+
+
+    .contentSvg svg{
+        transform: scale(.93);
+        position: relative;
+        left: 50px;
+    }
+
+    /* CABACALHO MUNICIPIOS */
+    .contentInformation div{
+        display: none;
+    }
+
+    .contentSvg:has( svg *  #path5989:hover) ~  .contentInformation > .Manaus{
+        display: block;
+    } 
+
+    .contentSvg:has( svg *  #path6068:hover) ~  .contentInformation > .Anori{
+        display: block;
+    } 
+
+    .contentSvg:has( svg *  #path6056:hover) ~  .contentInformation > .Manacapuru{
+        display: block;
+    }
+
+    @media only screen and (max-width: 1320px) {
+        .contentSvg svg{
+            transform: scale(.85);
+        }
+
+        #divContent{
+            flex-direction: column;
+        }
+    }
+
+
+    @media only screen and (max-width: 1220px) {
+        .contentSvg svg{
+            transform: scale(.77);
+        }
+    }
+
+    @media only screen and (max-width: 1150px) {
+        .contentSvg svg{
+            transform: scale(.69);
+        }
+    }
+    @media only screen and (max-width: 1000px) {
+        .contentSvg svg{
+            transform: scale(.63);
+        }
+    }
+        @media only screen and (max-width: 10px) {
+        .contentSvg svg{
+            transform: scale(.63);
+        }
+    }
+
+
+    </style>
+</head>
+<body>
+    <div id="divContent" style="display: flex;align-items: flex-start;justify-content:space-evenly;">
+        <div class="contentSvg"  style="display: flex;align-items:center;justify-content:center;"><img src="../img/iconAcessoRapido/norte.svg" onload="fetchSvg(this)" alt=""></div>
+        <div class="contentInformation">
+           <div class="mun Anori">
+            <span class="titleEstado"> <img width="25px" src="../img/iconEstados.png" alt="estadoAmazonas" title="estado-amazonas"> <h2>Anori</h2></span>
+            <div style="display: flex;" counter="1" class="escolaCentro">
+                <p >SEM ESTRUTURA PRÓPRIA &nbsp(ANORI)</p> <img class="rowBottonEscola" onclick="abrirCursoEscolaCentro(this)" style="margin-left: 5px;" width="10px" src="../img/rowBottomWhite.png" alt="">
+                
+            </div>
+            <div class="coursesEscolaCentro ANORI">
+                <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start; margin-top: 5px;"> <img width="20px" src="../img/iconCursos/edFisica.svg" alt=""> <p style="margin-left:5px; ">Educação Física</p></span>
+                <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start; margin-top: 5px"> <img width="20px" src="../img/iconCursos/letras.svg" alt=""> <p style="margin-left:5px; ">Letras - Língua Portuguesa</p></span>
+                <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start; margin-top: 5px"> <img width="20px" src="../img/iconCursos/matematica.svg" alt=""> <p style="margin-left:5px; ">Matemática</p></span>
+                <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start; margin-top: 5px"> <img width="20px" src="../img/iconCursos/pedagogia.svg" alt=""> <p style="margin-left:5px; ">Normal Superior</p></span>
+            </div>
+           </div>
+
+           <div class="mun Manaus">
+            <span class="titleEstado"> <img width="25px" src="../img/iconEstados.png" alt="estadoAmazonas" title="estado-amazonas"> <h2>Manaus</h2></span>
+            
+            <div style="display: flex;" counter="1" class="escolaCentro">
+                <p >ESCOLA DE DIREITO &nbsp(ED)</p> <img class="rowBottonEscola" onclick="abrirCursoEscolaCentro(this)" style="margin-left: 5px;" width="10px" src="../img/rowBottomWhite.png" alt="">
+                
+            </div>
+            <div class="coursesEscolaCentro ED">
+                    <span class="course" style="margin-top: 5px;   display: inline-flex; align-items: center; justify-content: flex-start;"> <img width="20px" src="../img/iconCursos/direito.svg" alt=""> <p style="margin-left:5px; ">Direito</p></span>
+            </div>
+
+            <div style="display: flex;" counter="2" class="escolaCentro">
+                <p>ESCOLA NORMAL SUPERIOR &nbsp(ENS)</p> <img class="rowBottonEscola" onclick="abrirCursoEscolaCentro(this)" style="margin-left: 5px;" width="10px" src="../img/rowBottomWhite.png" alt="">
+            </div>
+            <div class="coursesEscolaCentro ENS">
+                <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start; margin-top: 5px;"> <img width="20px" src="../img/iconCursos/biologia.svg" alt=""> <p style="margin-left:5px; ">Ciências Biológicas</p></span>
+                <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start; margin-top: 5px"> <img width="20px" src="../img/iconCursos/geografia.svg" alt=""> <p style="margin-left:5px; ">Licenciatura em Geografia</p></span>
+                <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start; margin-top: 5px"> <img width="20px" src="../img/iconCursos/letras.svg" alt=""> <p style="margin-left:5px; ">Letras - Língua Portuguesa</p></span>
+                <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start; margin-top: 5px"> <img width="20px" src="../img/iconCursos/matematica.svg" alt=""> <p style="margin-left:5px; ">Matemática</p></span>
+                <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start; margin-top: 5px"> <img width="20px" src="../img/iconCursos/pedagogia.svg" alt=""> <p style="margin-left:5px; ">Pedagogia</p></span>
+            </div>
+
+            <div style="display: flex;" counter="3" class="escolaCentro">
+                <p>ESCOLA SUPERIOR DE CIÊNCIAS DA SAÚDE &nbsp(ESA)</p> <img class="rowBottonEscola" onclick="abrirCursoEscolaCentro(this)" style="margin-left: 5px;" width="10px" src="../img/rowBottomWhite.png" alt="">
+            </div>
+            <div class="coursesEscolaCentro ESA">
+                <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start; margin-top: 5px;"> <img width="20px" src="../img/iconCursos/biotecnologia.svg" alt=""> <p style="margin-left:5px; ">Biotecnologia</p></span>
+                <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start; margin-top: 5px"> <img width="20px" src="../img/iconCursos/edFisica.svg" alt=""> <p style="margin-left:5px; ">Educação Física</p></span>
+                <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start; margin-top: 5px"> <img width="20px" src="../img/iconCursos/enfermagem.svg" alt=""> <p style="margin-left:5px; ">Enfermagem</p></span>
+                <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start; margin-top: 5px"> <img width="20px" src="../img/iconCursos/farmacia.svg" alt=""> <p style="margin-left:5px; ">Farmácia</p></span>
+                <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start; margin-top: 5px"> <img width="20px" src="../img/iconCursos/medicina.svg" alt=""> <p style="margin-left:5px; ">Medicina</p></span>
+                <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start; margin-top: 5px"> <img width="20px" src="../img/iconCursos/odontologia.svg" alt=""> <p style="margin-left:5px; ">Odontologia</p></span>
+            </div>
+
+            <div style="display: flex;" counter="4" class="escolaCentro">
+                <p>ESCOLA SUPERIOR DE ARTES E TURISMO &nbsp(ESAT)</p> <img class="rowBottonEscola" onclick="abrirCursoEscolaCentro(this)" style="margin-left: 5px;" width="10px" src="../img/rowBottomWhite.png" alt="">
+            </div>
+            <div class="coursesEscolaCentro ESAT">
+                <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start; margin-top: 5px;"> <img width="20px" src="../img/iconCursos/danca.svg" alt=""> <p style="margin-left:5px; ">Dança</p></span>
+                <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start; margin-top: 5px"> <img width="20px" src="../img/iconCursos/musica.svg" alt=""> <p style="margin-left:5px; ">Música</p></span>
+                <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start ;margin-top: 5px"> <img width="20px" src="../img/iconCursos/teatro.svg" alt=""> <p style="margin-left:5px; ">Teatro</p></span>
+                <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start; margin-top: 5px"> <img width="20px" src="../img/iconCursos/turismo.svg" alt=""> <p style="margin-left:5px; ">Turismo</p></span>
+            </div>
+            
+            
+            <div style="display: flex;" counter="5" class="escolaCentro">
+                <p>ESCOLA SUPERIOR CIÊNCIAS SOCIAIS &nbsp(ESO)</p> <img class="rowBottonEscola" onclick="abrirCursoEscolaCentro(this)" style="margin-left: 5px;" width="10px" src="../img/rowBottomWhite.png" alt="">
+            </div>
+            <div class="coursesEscolaCentro ESO">
+                <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start; margin-top: 5px;"> <img width="20px" src="../img/iconCursos/adminstracao.svg" alt=""> <p style="margin-left:5px; ">Administração</p></span>
+                <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start; margin-top: 5px"> <img width="20px" src="../img/iconCursos/arqeuologia.svg" alt=""> <p style="margin-left:5px; ">Arqueologia</p></span>
+                <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start; margin-top: 5px"> <img width="20px" src="../img/iconCursos/cContabeis.svg" alt=""> <p style="margin-left:5px; ">Ciências Contábeis</p></span>
+                <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start; margin-top: 5px"> <img width="20px" src="../img/iconCursos/cEconomicas.svg" alt=""> <p style="margin-left:5px; ">Ciências Econômicas</p></span>
+                <!-- <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start;margin-left: 7px; margin-top: 5px"> <img width="20px" src="../img/iconCursos/turismo.svg" alt=""> <p style="margin-left:5px; ">Direito</p></span> -->
+            </div>
+
+            <div style="display: flex;" counter="6" class="escolaCentro">
+                <p>ESCOLA SUPERIOR TECNOLOGIA &nbsp(EST)</p> <img class="rowBottonEscola" onclick="abrirCursoEscolaCentro(this)" style="margin-left: 5px;" width="10px" src="../img/rowBottomWhite.png" alt="">
+            </div>
+            <div class="coursesEscolaCentro EST">
+                <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start; margin-top: 5px;"> <img width="20px" src="../img/iconCursos/adminstracao.svg" alt=""> <p style="margin-left:5px; ">Agrimensura</p></span>
+                <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start; margin-top: 5px"> <img width="20px" src="../img/iconCursos/arqeuologia.svg" alt=""> <p style="margin-left:5px; ">Análise e Desenvolvimento de Sistemas</p></span>
+                <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start; margin-top: 5px"> <img width="20px" src="../img/iconCursos/cContabeis.svg" alt=""> <p style="margin-left:5px; ">Automação Industrial</p></span>
+                <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start; margin-top: 5px"> <img width="20px" src="../img/iconCursos/cEconomicas.svg" alt=""> <p style="margin-left:5px; ">Licenciatura em Computação</p></span>
+                <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start; margin-top: 5px"> <img width="20px" src="../img/iconCursos/cEconomicas.svg" alt=""> <p style="margin-left:5px; ">Engenharia  Civil</p></span>
+                <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start; margin-top: 5px"> <img width="20px" src="../img/iconCursos/cEconomicas.svg" alt=""> <p style="margin-left:5px; ">Engenharia da Computação</p></span>
+                <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start; margin-top: 5px"> <img width="20px" src="../img/iconCursos/cEconomicas.svg" alt=""> <p style="margin-left:5px; ">Engenharia de Controle e Automação</p></span>
+                <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start; margin-top: 5px"> <img width="20px" src="../img/iconCursos/cEconomicas.svg" alt=""> <p style="margin-left:5px; ">Engenharia de Materais</p></span>
+                <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start; margin-top: 5px"> <img width="20px" src="../img/iconCursos/cEconomicas.svg" alt=""> <p style="margin-left:5px; ">Engenharia Elétrica</p></span>
+                <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start; margin-top: 5px"> <img width="20px" src="../img/iconCursos/cEconomicas.svg" alt=""> <p style="margin-left:5px; ">Engenharia Eletrônica</p></span>
+                <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start; margin-top: 5px"> <img width="20px" src="../img/iconCursos/cEconomicas.svg" alt=""> <p style="margin-left:5px; ">Engenharia Florestal</p></span>
+                <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start; margin-top: 5px"> <img width="20px" src="../img/iconCursos/cEconomicas.svg" alt=""> <p style="margin-left:5px; ">Engenharia Mecânica</p></span>
+                <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start; margin-top: 5px"> <img width="20px" src="../img/iconCursos/cEconomicas.svg" alt=""> <p style="margin-left:5px; ">Engenharia Naval</p></span>
+                <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start; margin-top: 5px"> <img width="20px" src="../img/iconCursos/cEconomicas.svg" alt=""> <p style="margin-left:5px; ">Engenharia Química</p></span>
+                <!-- <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start;margin-left: 7px; margin-top: 5px"> <img width="20px" src="../img/iconCursos/turismo.svg" alt=""> <p style="margin-left:5px; ">Direito</p></span> -->
+            </div>
+
+           </div>
+
+           <div class="mun Manacapuru">
+            <h2>Manacapuru</h2>
+            <div style="display: flex;" counter="1" class="escolaCentro">
+                <p> NÚCLEO DE ESTUDOS SUPERIORES DE MANACAPURU &nbsp(NESMPU)</p> <img class="rowBottonEscola" onclick="abrirCursoEscolaCentro(this)" style="margin-left: 5px;" width="10px" src="../img/rowBottomWhite.png" alt="">
+            </div>
+            <div class="coursesEscolaCentro NESMPU">
+                <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start; margin-top: 5px;"> <img width="20px" src="../img/iconCursos/arqeuologia.svg" alt=""> <p style="margin-left:5px; ">Arqueologia</p></span>
+                <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start; margin-top: 5px"> <img width="20px" src="../img/iconCursos/biologia.svg" alt=""> <p style="margin-left:5px; ">Ciências Biológicas</p></span>
+                <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start; margin-top: 5px"> <img width="20px" src="../img/iconCursos/cContabeis.svg" alt=""> <p style="margin-left:5px; ">Ciências Contábeis</p></span>
+                <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start; margin-top: 5px"> <img width="20px" src="../img/iconCursos/cEconomicas.svg" alt=""> <p style="margin-left:5px; ">Ciências Econômicas</p></span>
+                <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start; margin-top: 5px"> <img width="20px" src="../img/iconCursos/danca.svg" alt=""> <p style="margin-left:5px; ">Dança</p></span>
+                <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start; margin-top: 5px"> <img width="20px" src="../img/iconCursos/edFisica.svg" alt=""> <p style="margin-left:5px; ">Educação Física</p></span>
+                <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start; margin-top: 5px"> <img width="20px" src="../img/iconCursos/geografia.svg" alt=""> <p style="margin-left:5px; ">Geografia</p></span>
+                <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start; margin-top: 5px"> <img width="20px" src="../img/iconCursos/geografia.svg" alt=""> <p style="margin-left:5px; ">História</p></span>
+                <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start; margin-top: 5px"> <img width="20px" src="../img/iconCursos/letras.svg" alt=""> <p style="margin-left:5px; ">Letras - Língua Inglesa</p></span>
+                <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start; margin-top: 5px"> <img width="20px" src="../img/iconCursos/letras.svg" alt=""> <p style="margin-left:5px; ">Letras - Língua Portuguesa</p></span>
+                <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start; margin-top: 5px"> <img width="20px" src="../img/iconCursos/matematica.svg" alt=""> <p style="margin-left:5px; ">Matemática</p></span>
+                <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start; margin-top: 5px"> <img width="20px" src="../img/iconCursos/pedagogia.svg" alt=""> <p style="margin-left:5px; ">Normal Superior</p></span>
+                
+                <!-- <span class="course" style="display: inline-flex; align-items: center; justify-content: flex-start;margin-left: 7px; margin-top: 5px"> <img width="20px" src="../img/iconCursos/turismo.svg" alt=""> <p style="margin-left:5px; ">Direito</p></span> -->
+            </div>
+           </div>
+
+        </div>
+    </div>
+
+
+   
+</body>
+
+
+<script>
+
+let municipios = [];
+    
+
+   const fetchSvg = (image) => {
+            fetch(image.src)
+                .then((response) => response.text())
+                .then((response) => {
+                    const span = document.createElement('span');
+                    span.innerHTML = response;
+                    const inlineSvg = span.getElementsByTagName('svg')[0];
+                    image.parentNode.replaceChild(inlineSvg, image);
+                    return true;
+                })
+                .then(() => { console.log(); });
+        };
+
+        setTimeout(() => {
+       
+         const municipiosSvg =  document.querySelectorAll('g > path');
+         let i = 0;
+         for(let mun of municipiosSvg){
+            if(i>0){
+                municipios.push(mun);
+            }
+            i++;
+         }
+         console.log(municipios)
+        //  let partialMun = municipiosSvg.splice(0,2);
+        //  console.log(partialMun)
+         console.log(municipiosSvg);
+         for(let mun of municipios){
+            mun.setAttribute('onclick', 'mostrarInfoMun(this)')
+         }
+        }, 2000);
+
+        function mostrarInfoMun(element){
+         try{
+ 
+            resetaFillMunicipios();
+            
+            element.style.fill = 'rgb(21, 146, 94)';
+            element.style.fillOpacity = 1;
+            element.style.strokeOpacity = 1;
+            element.style.strokeWidth = 0.7;
+            element.style.stroke = 'rgb(21, 146, 94)';
+
+            const id = element.getAttribute('id');
+            console.log(element.getAttribute('id'));
+            const texto = document.querySelector(`#${id} + text > tspan`).textContent;
+            console.log(texto);
+            const divInfoMunicipio = document.getElementsByClassName(texto)[0];
+            console.log(divInfoMunicipio);
+            const clasMun = document.getElementsByClassName('mun');
+            for(let mun of clasMun){
+                mun.style.display = 'none';
+            }
+            divInfoMunicipio.style.display = 'flex';
+         }catch{
+            // document.location.reload(true);
+         }
+        }
+
+        function resetaFillMunicipios(){
+           /* for(let mun of municipios){
+                mun.style.fill = 'rgb(204, 204, 204)';
+                mun.style.fillOpacity = 0.352941;
+                mun.style.strokeOpacity = 1;
+                mun.style.strokeWidth = 0.315;
+                mun.style.stroke = 'rgb(0, 0, 0)'; 
+            }
+
+            */
+            
+        }        
+       
+
+
+    
+        
+
+</script>
+</html>

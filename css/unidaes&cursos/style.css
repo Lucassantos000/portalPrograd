@@ -1,0 +1,93 @@
+:root{
+    --azul--fundo: rgba(18,149, 194);
+    --azul--escuro: rgba(3,120,163,1);
+}
+
+.escolaCentro{
+    height: 45px;
+    background-color: var(--azul--fundo);
+    display: flex;
+    align-items: center;
+    /* justify-content: space-evenly; */
+    margin-top: 5px;
+    margin-left: 20px;
+    color: white;
+    width:100%;
+}
+
+.escolaCentro::before{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    content: attr(counter);
+    /* display: block; */
+    position: relative;
+    width: 30px;
+    height: 30px;
+    /* top: 7.5px; */
+    border-radius: 50%;
+    background-color: var(--azul--escuro);
+    left: -15px;
+}
+
+.escolaCentro:hover{
+    color: gainsboro;
+    /* cursor: pointer; */
+}
+
+.mun{
+    display: none;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.contentInformation{
+    min-width:450px;
+    margin-bottom: 15px;
+}
+
+
+.coursesEscolaCentro{
+    width:100%;
+    margin-top: 5px;
+    overflow: hidden;
+    height: 0;
+    /* margin-left: 10px; */
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-around;
+    /* transition: all ease 1s; */
+    background-color: var(--azul--fundo);
+}
+
+.rowBottonEscola{
+    cursor: pointer;
+    transition: all ease-in-out 0.4s;
+}
+
+.coursesEscolaCentro{
+    margin-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: var(--azul--fundo);
+    /* padding-left: 10px; */
+}
+
+.course{
+    /* margin-left: 10px; */
+    height: 25px;
+    width:calc(100% - 10px);
+    color: white;
+    padding-left: 10px;
+}
+
+.course:hover{
+    background-color: var(--azul--escuro);
+}
+
+.course>p:hover {
+    color: gainsboro;
+    cursor: pointer;
+}
